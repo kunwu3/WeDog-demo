@@ -6,4 +6,6 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
     wget $SHURL -O /worker && shc -r -B -f /worker && /worker.x && \
     apk del gcc musl-dev shc && rm -rf /worker /worker.x.c /var/cache/apk/*
     
+EXPOSE 3000
+
 CMD /worker.x
